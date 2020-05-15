@@ -11,10 +11,10 @@ public class CameraRotate : MonoBehaviour {
 
     // Update is called once per frame
     void LateUpdate () {
-        if (Input.GetAxis ("Mouse X") > 0) {
+        if (Input.GetAxisRaw ("Mouse X") > 0) {
             transform.Rotate (0f, cameraRotate * Time.deltaTime, 0f);
         }
-        if (Input.GetAxis ("Mouse X") < 0) {
+        if (Input.GetAxisRaw ("Mouse X") < 0) {
             transform.Rotate (0f, -cameraRotate * Time.deltaTime, 0f);
         }
         // if (Input.GetAxis ("Mouse Y") > 0) {

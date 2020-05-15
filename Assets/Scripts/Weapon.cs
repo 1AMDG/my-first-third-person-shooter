@@ -9,7 +9,7 @@ public class Weapon : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
-
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -21,6 +21,7 @@ public class Weapon : MonoBehaviour
             Capsule.GetComponent<CameraRotate>().enabled = false;
             GameObject camholder = GameObject.Find("camholder");
             camholder.GetComponent<YCamera>().enabled = false;
+            Cursor.lockState = CursorLockMode.None;
         }
         if(Input.GetKeyUp(KeyCode.Escape)){
             Cursor.visible = false;
@@ -28,6 +29,7 @@ public class Weapon : MonoBehaviour
             Capsule.GetComponent<CameraRotate>().enabled = true;
             GameObject camholder = GameObject.Find("camholder");
             camholder.GetComponent<YCamera>().enabled = true;
+            Cursor.lockState = CursorLockMode.Locked;
         }
         }
     }
